@@ -2,4 +2,7 @@
 *.aux
 *.toc
 *.pdf
+*.fls
+*.fdb_latexmk
+*.synctex.gz
 !frontpage/frontpage.pdf
