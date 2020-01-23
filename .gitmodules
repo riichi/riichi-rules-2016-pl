@@ -1,0 +1,3 @@
+[submodule "tikz-riichi"]
+	path = tikz-riichi
+	url = git@github.com:riichi/tikz-riichi.git
