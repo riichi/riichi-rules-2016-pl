@@ -1,18 +1,25 @@
+% rubber: shell_escape
+
 \documentclass[a4paper,11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{polski}
+\usepackage[usenames,dvipsnames]{xcolor} % Musi być przed tikzem
 \usepackage{pdfpages}
 \usepackage{svg}
 \graphicspath{{tikz-riichi/}{./}}
 \usepackage{tikz-riichi/mahjong-hand}
 \usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\setlist{nolistsep}
 \setlength\parindent{0pt}
 \setlength{\parskip}{0.5\baselineskip}
 \renewcommand{\familydefault}{\sfdefault}
 
 \begin{document}
     \includepdf{frontpage/frontpage.pdf}
+    \setlength{\parskip}{0pt}
     \tableofcontents
+    \setlength{\parskip}{0.5\baselineskip}
     \pagebreak
     \input{preface}
     \input{acknowledgements}

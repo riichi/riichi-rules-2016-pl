@@ -1,0 +1,44 @@
+\makeatletter
+\definecolor{myred}{HTML}{D4213D}
+\newcommand\@blackbigdot[1]{\filldraw[black] #1 circle (0.16);}
+\newcommand\@redbigdot[1]{\filldraw[myred] #1 circle (0.16);}
+\newcommand\@blacksmalldot[1]{\filldraw[black] #1 circle (0.09);}
+\newcommand\@redsmalldot[1]{\filldraw[myred] #1 circle (0.09);}
+\newcommand\@drawstick[2]{
+    \begin{tikzpicture}[x=#1,y=#1]
+        \draw[rounded corners=5,thick] (0,0) rectangle (8,1);
+        #2
+    \end{tikzpicture}
+}
+\newcommand\StickA[1]{\@drawstick{#1}{
+    \@blacksmalldot{(3.4,0.3)}
+    \@blacksmalldot{(3.8,0.3)}
+    \@blacksmalldot{(4.2,0.3)}
+    \@blacksmalldot{(4.6,0.3)}
+    \@blacksmalldot{(3.4,0.7)}
+    \@blacksmalldot{(3.8,0.7)}
+    \@blacksmalldot{(4.2,0.7)}
+    \@blacksmalldot{(4.6,0.7)}
+}}
+\newcommand\StickB[1]{\@drawstick{#1}{
+    \@redbigdot{(4,0.5)}
+}}
+\newcommand\StickC[1]{\@drawstick{#1}{
+    \@redbigdot{(4,0.5)}
+    \@redsmalldot{(3.6,0.25)}
+    \@redsmalldot{(3.6,0.75)}
+    \@redsmalldot{(4.4,0.25)}
+    \@redsmalldot{(4.4,0.75)}
+}}
+\newcommand\StickD[1]{\@drawstick{#1}{
+    \@redbigdot{(4,0.5)}
+    \@redsmalldot{(3.6,0.25)}
+    \@redsmalldot{(3.6,0.75)}
+    \@redsmalldot{(4.4,0.25)}
+    \@redsmalldot{(4.4,0.75)}
+    \@redsmalldot{(3.2,0.5)}
+    \@redsmalldot{(4.8,0.5)}
+    \@blackbigdot{(2.5,0.5)}
+    \@blackbigdot{(5.5,0.5)}
+}}
+\makeatother
