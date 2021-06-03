@@ -1,0 +1,55 @@
+\newpage
+\section{Przebieg gry}
+
+Celem gracza w pojedynczym rozdaniu (nazywanym \emph{ręką}) jest złożenie
+ręki.
+Celem gry jest zebranie jak największej łącznej liczby punktów z wygrywających
+rąk.
+W szczególności nie ma znaczenia, ile rąk złoży gracz --- jedynym kryterium
+wygranej jest jego końcowy wynik.
+
+\subsection{Fazy gry}
+Tura gracza rozpoczyna się w momencie pozyskania przez niego kamienia i kończy
+w momencie odrzucenia kamienia.
+Podczas zwyczajnej sekwencji tur każdy z graczy rozgrywa swoją turę dokładnie
+raz.
+Zwyczajna sekwencja zostaje przerwana, jeśli odrzucony kamień zostaje
+zameldowany do \texttt{chii}, \texttt{pon} lub \texttt{kan} lub też jeżeli gracz
+w trakcie swojej tury zamelduje \texttt{ankan} (zamknięty \texttt{kan}).
+Rozdanie kończy się, gdy któryś z graczy złoży rękę (co daje mu wygraną), lub
+też gdy zostanie ogłoszony remis.
+Podczas pojedynczej rundy wszyscy gracze kolejno grają jako gracze Wschodu.
+Kompletna gra składa się z dwóch rund: rundy wschodu i rundy południa.
+
+\subsection{Ręka}
+Kompletna ręka w mahjongu składa się z czterech \emph{grup} oraz pary.
+Grupy dzielą się na sekwensy (\texttt{shuntsu}), trójki (\texttt{koutsu})
+i czwórki (\texttt{kantsu}).
+Dodatkowo, kompletna ręka musi mieć przynajmniej jedno \texttt{yaku} (punktowany
+układ).
+Gracz będący \texttt{furiten} nie może wygrać na kamieniu odrzuconym przez
+innego gracza.
+
+Sekwens to trzy kolejne kamienie liczbowe z tej samej rodziny --- sekwensów nie
+można tworzyć ze smoków ani wiatrów.
+Kamienie 8-9-1 oraz 9-1-2 z tej samej rodziny nie tworzą sekwensu.
+
+Trójka składa się z trzech identycznych kamieni.
+
+Czwórka składa się z czterech identycznych kamieni.
+
+Para składa się z dwóch identycznych kamieni.
+
+\begin{center}
+    \begin{tabular}{lc}
+        \raisebox{1.2em}{Sekwens (\texttt{shuntsu})}
+            & \DrawHand{m456}{3em} \\
+        \raisebox{1.2em}{Trójka (\texttt{koutsu})}
+            & \DrawHand{p444}{3em} \\
+        \raisebox{1.2em}{Czwórka (\texttt{kantsu})}
+            & \DrawHand{z1111}{3em}
+    \end{tabular}
+\end{center}
+
+W Riichi Mahjongu istnieją dwie specjalne ręce, które nie wymagają posiadania
+czterech grup oraz pary: \texttt{chiitoitsu} oraz \texttt{kokushi musou}.
