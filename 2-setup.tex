@@ -2,6 +2,11 @@
 \section{Przygotowanie gry}
 
 \subsection{Wiatr gracza}
+\begin{figure}[h]
+    \centering
+    \includesvg[width=0.7\linewidth]{images/walls-winds.svg}
+    \caption{Wiatry graczy przy stole od strony gracza Północy.}
+\end{figure}
 Mahjong jest grą czeroosobową, w której każdy z graczy ma przypisany jeden z
 czterech wiatrów, nazywany \emph{wiatrem gracza}.
 Grę rozpoczyna gracz Wschodu --- po jego prawej stronie siedzi gracz Południa,
@@ -42,9 +47,91 @@ awersami do dołu, długi na siedemnaście kamieni i składający się z dwóch 
 Mury graczy są następnie tak zsunięte do środka stołu, by tworzyły kwadrat.
 
 \subsection{Rozbijanie muru}
+\begin{figure}[h]
+    \centering
+    \includesvg[width=0.7\linewidth]{images/wall-break.svg}
+    \caption{Rozbity mur od strony gracza Północy, gdy gracz Wschodu wyrzucił 12
+    oczek.}
+    \label{fig:rozbijanie}
+\end{figure}
 Gracz Wschodu rzuca dwiema kośćmi i odlicza graczy przeciwnie do ruchu wskazówek
 zegara, zaczynając od siebie i odliczając tyle, ile wynosi suma oczek na
 kościach.
 Wybrany w ten sposób gracz dzieli znajdujący się przed nim mur na dwie części
 --- lewą i prawą tak, by prawa część miała długość równą liczbie oczek
-wyrzuconych przez gracza Wschodu.
+wyrzuconych przez gracza Wschodu (patrz Rysunek \ref{fig:rozbijanie}).
+
+\subsection{Martwy mur}
+Pierwsze siedem par kamieni w murze na prawo od miejsca rozbicia tworzy \emph{martwy
+mur}.
+W przypadku, gdy gracz rozbijający nie ma dość kamieni, by go uformować (tj. gdy
+gracz Wschodu wyrzucił mniej niż siedem oczek), brakujący fragment dodaje się z
+sąsiadującego fragmentu muru gracza po prawej stronie.
+Następnie martwy mur można nieco odsunąć, aby odseparować go od pozostałych
+kamieni.
+Kamienie z martwego muru nie są używane w grze z wyjątkiem sytuacji, gdy któryś
+z graczy zamelduje \texttt{kan}, gdy to pełnią rolę \emph{kamieni zastępczych}.
+
+Zaleca się, aby gracz, który ma przed sobą martwy mur, położył pierwszy kamień
+zastępczy bezpośrednio po lewej stronie martwego muru tak, aby martwy mur
+tworzył kształt złożony z dwóch pojedynczych kamieni i sześciu par kamieni
+leżących jeden na drugim.
+Ma to na celu zmniejszenie ryzyka przypadkowego strącenia i odsłonięcia
+pierwszego kamienia zastępczego.
+
+\subsection{Wskaźnik \texttt{dora}}
+W górnym rzędzie martwego muru należy odsłonić trzeci kamień od lewej.
+Kamień ten pełni rolę \emph{wskaźnika \texttt{dora}}, tzn. określa, jaki kamień
+jest \texttt{dora}:
+\begin{itemize}
+    \item Jeśli wskaźnik jest jednym z kamieni liczbowych, \texttt{dora} będą
+        kamienie z tej samej rodziny o numerze o jeden większym (gdy wskaźnik
+        jest dziewiątką, \texttt{dora} będą jedynki),
+    \item Jeśli wskaźnik jest wiatrem, \texttt{dora} będą również wiatry zgodnie
+        z regułą: wschód wskazuje na południe, południe --- na zachód, zachód
+        --- na północ, północ --- na wschód,
+    \item Jeśli wskaźnik jest smokiem, \texttt{dora} będą również smoki zgodnie
+        z regułą: biały wskazuje na zielonego, zielony --- na czerwonego,
+        czerwony --- na białego.
+\end{itemize}
+
+\begin{center}
+    \begin{tabular}{cc}
+        Wskaźnik & \texttt{dora} \\
+        \DrawHand{z??m2z????}{3em} & \DrawHand{m3}{3em} \\
+        \DrawHand{z??p9z????}{3em} & \DrawHand{p1}{3em} \\
+        \DrawHand{z??z6z????}{3em} & \DrawHand{z7}{3em} \\
+        \DrawHand{z??z4z????}{3em} & \DrawHand{z1}{3em} \\
+    \end{tabular}
+\end{center}
+
+\subsection{Rozdanie}
+Gracz Wschodu zabiera dla siebie pierwsze cztery kamienie (dwa górne plus dwa
+dolne) znajdujące się bezpośrednio za miejscem rozbicia muru.
+Następnie kamienie zabiera się czwórkami zgodnie z ruchem wskazówek zegara,
+jednak gracze robią to w kolejności przeciwnej do ruchu wskazówek zegara.
+To znaczy, że gracz Południa zabiera następne cztery kamienie, po nim cztery
+kamienie zabiera gracz Zachodu i tak dalej, powtarzając aż do momentu, w którym
+wszyscy gracze mają po dwanaście kamieni.
+Następnie gracz Wschodu zabiera dwa kamienie: pierwszy i trzeci z górnego rzędu
+muru (patrz Rysunek \ref{fig:chinski-szpon}), po czym gracze Południa, Zachodu i
+Północy zabierają kolejno po jednym kamieniu\footnote{
+    Ta sekwencja dobrań odpowiada takiej, w której wszyscy gracze dobierają
+    kolejno trzynasty kamień do ręki, a następnie gracz Wschodu (jako
+    rozpoczynający rozdanie) dobiera następny, czternasty.
+}.
+W tym momencie gracz Wschodu powinien mieć rękę składającą się z czternastu
+kamieni, zaś wszyscy pozostali gracze --- z trzynastu.
+\begin{figure}[h]
+    \centering
+    \includesvg[width=0.7\linewidth]{images/chinski-szpon.svg}
+    \caption{Koniec muru zaraz po zabraniu dla siebie ostatnich kamieni przez gracza
+    Wschodu.}
+    \label{fig:chinski-szpon}
+\end{figure}
+
+Każdy z graczy układa kamienie w swojej ręce tak, aby były widoczne tylko dla
+niego.
+Gracz Wchodu zabiera kości i kładzie je po swojej prawej stronie --- stanowi to
+dla wszystkich jasną informację, który z graczy jest graczem Wschodu (a zatem
+również jakie są wiatry pozostałych graczy).
