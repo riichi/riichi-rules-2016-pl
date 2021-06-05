@@ -11,19 +11,24 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{enumitem}
 \usepackage{wrapfig}
+\usepackage[colorlinks]{hyperref}
 \setlist{nolistsep}
 \setlength\parindent{0pt}
 \setlength{\parskip}{0.5\baselineskip}
 \renewcommand{\familydefault}{\sfdefault}
 
-% Ten sam kolor rewersu co w obrazkach z oryginalnych zasad
+% Ten sam kolor rewersu co w obrazkach z oryginalnych zasad.
 \definecolor{tilebackcolor}{HTML}{4f4c4d}
 
 \begin{document}
     \includepdf{frontpage/frontpage.pdf}
-    \setlength{\parskip}{0pt}
-    \tableofcontents
-    \setlength{\parskip}{0.5\baselineskip}
+    % Na potrzeby spisu treści zerujemy parskip (żeby się za bardzo nie rozlazło)
+    % i nie kolorujemy linków.
+    {
+        \setlength{\parskip}{0pt}
+        \hypersetup{hidelinks}
+        \tableofcontents
+    }
     \pagebreak
     \input{preface}
     \input{acknowledgements}

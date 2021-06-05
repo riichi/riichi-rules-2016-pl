@@ -5,6 +5,7 @@
 *.fls
 *.fdb_latexmk
 *.synctex.gz
+*.out
 !frontpage/frontpage.pdf
 auto/
 svg-inkscape/
