@@ -13,11 +13,10 @@ Tura gracza rozpoczyna się w momencie pozyskania przez niego kamienia i kończy
 w momencie odrzucenia kamienia.
 Podczas zwyczajnej sekwencji tur każdy z graczy rozgrywa swoją turę dokładnie
 raz.
-Zwyczajna sekwencja zostaje przerwana, jeśli odrzucony kamień zostaje
-zameldowany do \texttt{chii}, \texttt{pon} lub \texttt{kan} lub też jeżeli gracz
-w trakcie swojej tury zamelduje \texttt{ankan} (zamknięty \texttt{kan}).
-Rozdanie kończy się, gdy któryś z graczy złoży rękę (co daje mu wygraną), lub
-też gdy zostanie ogłoszony remis.
+Zwyczajna sekwencja zostaje przerwana, jeśli odrzucony kamień zostaje skradziony
+lub też jeżeli gracz w trakcie swojej tury zamelduje \texttt{ankan} (zamknięty
+\texttt{kan}). Rozdanie kończy się, gdy któryś z graczy złoży rękę (co daje mu
+wygraną), lub też gdy zostanie ogłoszony remis.
 Podczas pojedynczej rundy wszyscy gracze kolejno grają jako gracze Wschodu.
 Kompletna gra składa się z dwóch rund: rundy wschodu i rundy południa.
 
@@ -53,3 +52,150 @@ Para składa się z dwóch identycznych kamieni.
 
 W Riichi Mahjongu istnieją dwie specjalne ręce, które nie wymagają posiadania
 czterech grup oraz pary: \texttt{chiitoitsu} oraz \texttt{kokushi musou}.
+
+\subsection{Tura gracza}
+Gracze rozgrywają kolejno swoje tury.
+Zaczyna gracz Wschodu, a po nim kolejno gracze przeciwnie do ruchu wskazówek
+zegara.
+
+Gracz rozpoczyna swoją turę dobraniem kamienia z muru.
+Jednakże, ponieważ gracz Wschodu rozpoczyna rozdanie z czternastoma kamieniami,
+podczas swojej pierwszej tury nie dobiera on kamienia.
+Jeśli gracz nie może (lub nie chce) zadeklarować wygranej lub \texttt{kan},
+kończy on swoją turę odrzucając jeden ze swoich zasłoniętych kamieni.
+Podczas swojej pierwszej tury gracz Wschodu powinien przed odrzutem poczekać, aż
+pozostali gracze zobaczą i posortują swoje kamienie.
+
+Gracze powinni zwrócić uwagę na to, by odrzucać kamienie nie zasłaniając ich
+ręką.
+Odrzuty są umieszczane przed graczem wewnątrz muru w porządku od lewej do
+prawej, po sześć kamieni w rzędzie --- tak, aby było klarowne, kto (i w jakiej
+kolejności) odrzucił które kamienie.
+
+\subsubsection{Pierwszeństwo i czas przy kradzieży kamieni}
+% TODO: Przez dowolnego innego?
+% https://discord.com/channels/591384413410164765/656637295491022848/850873563707473920
+Ostatno odrzucony kamień może zostać przywłaszczony przez dowolnego gracza do
+trójki lub czwórki, dopóki następny gracz nie dobierze kolejnego kamienia z muru.
+Na ostatnio odrzuconym kamieniu można zadeklarować wygraną, dopóki następny
+gracz nie wykona odrzutu --- wyjątkiem jest sytuacja, w której następny gracz
+zadeklaruje wygraną przez dobór (\texttt{tsumo}).
+
+Kradzież do trójki lub czwórki może skutkować utratą kolejki przez graczy,
+ponieważ gra zaczyna toczyć się dalej zaczynając od gracza kradnącego, a nie
+odrzucającego.
+Jeżeli któryś z graczy zamelduje wygraną na odrzuconym kamieniu, wszystkie
+równoczesne meldunki kradzieży tego kamienia zostają zignorowane.
+Kilku graczy może wygrać na tym samym kamieniu jednocześnie.
+
+Gracz, którego tura ma nastąpić bezpośrednio po odrzucie kamienia, może ukraść
+ten kamień do sekwensu.
+Jeśli gracz nie zdecyduje się na kradzież, rozpoczyna swoją turę zwyczajnie
+dobierając kamień z muru.
+\begin{figure}[h]
+    \centering
+    \includesvg[width=0.7\linewidth]{images/table-midgame.svg}
+    \caption{Przykładowy stan stołu w trakcie gry.}
+    \label{fig:table-midgame}
+\end{figure}
+
+Deklaracja wygranej na odrzuconym kamieniu ma pierwszeństwo przed każdą inną
+deklaracją dotyczącą tego kamienia.
+Kradzież do trójki lub czwórki ma pierwszeństwo przed kradzieżą do sekwensu.
+Gracz, który zadeklarował wygraną, nie może zmienić swojej deklaracji.
+
+Gracze nie mają limitu czasowego na zagrania, ale oczekuje się od nich gry w
+rozsądnym tempie.
+Gracz dobierający kamień zbyt szybko tak, że inni gracze nie mają czasu wykonać
+meldunków, lub wielokrotnie zbytnio przedłużający swoją turę może być decyzją
+sędziego ukarany za utrudnianie gry.
+
+Jeśli następny gracz dobierze kamień zbyt szybko uniemożliwiając innemu graczowi
+wykonanie meldunku, meldunek uznaje się za ważny, a dobrany kamień umieszcza się
+z powrotem w murze.
+
+\subsubsection{Kradzież z podmianą (\texttt{kuikae})}
+Kradzież z podmianą (\emph{swap-calling}, \texttt{kuikae}) nie jest dozwolona:
+nie jest dozwolona kradzież kamienia i natychmiastowy odrzut tego samego
+kamienia.
+Ponadto nie jest dozwolona kradzież kamienia do sekwensu i odrzut kamienia z
+drugiego końca sekwensu.
+\begin{center}
+    \begin{tabular}{cccc}
+        \raisebox{0.7em}{Nie można ukraść\quad}\DrawHand{p1}{2em}
+            & \raisebox{0.7em}{do trójki}
+            & \DrawHand{p11*1}{2em}\raisebox{0.7em}{, a następnie odrzucić}
+            & \DrawHand{p1}{2em}\raisebox{0.7em}{.} \\
+        \raisebox{0.7em}{Nie można ukraść\quad}\DrawHand{p1}{2em}
+            & \raisebox{0.7em}{do sekwensu}
+            & \DrawHand{p1*23}{2em}\raisebox{0.7em}{, a następnie odrzucić}
+            & \DrawHand{p1}{2em}\raisebox{0.7em}{ lub }\DrawHand{p4}{2em}\raisebox{0.7em}{.}
+    \end{tabular}
+\end{center}
+
+\subsubsection{Otwarty sekwens}
+Kamień do sekwensu może być skradziony wyłącznie od gracza po lewej.
+Kradzież ostatnio odrzuconego kamienia do sekwensu rozpoczyna się od wyraźnego
+powiedzenia na głos ,,chow'' lub ,,chii''.
+Następnie gracz odsłania pasujące kamienie ze swojej ręki, po czym odrzuca
+kamień ze swojej ręki i zabiera skradzony kamień.
+Kolejność dwóch ostatnich czynności nie jest istotna: gracz może najpierw zabrać
+odrzucony kamień, a dopiero potem wykonać odrzut.
+
+\subsubsection{Otwarta trójka}
+Kradzież ostatnio odrzuconego kamienia do trójki rozpoczyna się od wyraźnego
+powiedzenia na głos ,,pung'' lub ,,pon''.
+Następnie gracz odsłania pasujące kamienie ze swojej ręki, po czym odrzuca
+kamień ze swojej ręki i zabiera skradzony kamień.
+Kolejność dwóch ostatnich czynności nie jest istotna: gracz może najpierw zabrać
+odrzucony kamień, a dopiero potem wykonać odrzut.
+
+\subsubsection{Otwarta czwórka}
+Kradzież ostatnio odrzuconego kamienia do czwórki rozpoczyna się od wyraźnego
+powiedzenia na głos ,,kong'' lub ,,kan'' i położenia kamienia awersem do góry
+razem z pasującymi trzema kamieniami z ręki gracza.
+Po odsłonięciu \texttt{kandora}, gracz dobiera kamień zastępczy z martwego muru
+i kontynuuje swoją turę tak, jak gdyby dobrał kamień z muru.
+
+Martwy mur zawsze składa się z 14 kamieni, zatem po każdym zameldowaniu czwórki
+ostatni kamień muru staje się częścią martego muru.
+
+\subsubsection{Rozszerzenie otwartej trójki do czwórki}
+Otwarta trójka może zostać rozszerzona do czwórki podczas tury gracza po tym,
+jak dobrał kamień z muru lub kamień zastępczy z martwego muru (tj. nie w turze,
+w której ukradł kamień do trójki lub sekwensu).
+Gracz musi powiedzieć na głos ,,kong'' lub ,,kan'' i położyć czwarty kamień
+równolegle do obróconego kamienia z rozszerzanej trójki.
+Następnie następuje odsłonięcie \texttt{kandora} i dobranie kamienia
+zastępczego.
+Kamień użyty do rozszerzenia trójki liczy się jako odrzut i można na nim
+zadeklarować wygraną.
+Martwy mur zawsze składa się z 14 kamieni, zatem po każdym zameldowaniu czwórki
+ostatni kamień muru staje się częścią martego muru.
+
+\subsubsection{Zamknięta czwórka}
+Zamknięta czwórka może być zadeklarowana podczas tury gracza po tym, jak dobrał
+kamień z muru lub kamień zastępczy z martwego muru (tj. nie w turze, w której
+ukradł kamień do trójki lub sekwensu).
+Gracz musi powiedzieć na głos ,,kong'' lub ,,kan'', odsłonić kamienie składające
+się na czwórkę, obrócić dwa środkowe kamienie rewersem do góry, odsłonić
+\texttt{kandora} i dobrać kamień zastępczy.
+Martwy mur zawsze składa się z 14 kamieni, zatem po każdym zameldowaniu czwórki
+ostatni kamień muru staje się częścią martego muru.
+
+Jeśli gracz nie miał otwartych grup, po zameldowaniu zamkniętej czwórki jego
+ręka pozostaje zamknięta.
+
+Na kamieniach z zamkniętej czwórki nie można zadeklarować wygranej, z wyjątkiem
+wygranej na \texttt{kokushi musou}.
+
+Cztery identyczne kamienie uznaje się za czwórkę wyłącznie wtedy, gdy nastąpiła
+deklaracja czwórki.
+
+\begin{figure}[h]
+    \centering
+    \input{images/dead-wall.tex}
+    \caption{Szczegółowy opis roli kamieni w martwym murze. Liczba na kamieniu
+    odpowiada numerowi czwórki deklarowanej w trakcie rozdania.}
+    \label{fig:dead-wall}
+\end{figure}

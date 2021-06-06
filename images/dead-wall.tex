@@ -1,0 +1,14 @@
+\begin{tikzpicture}
+    \tikzset{every node/.style={font=\scriptsize}};
+    \node[inner sep=0pt] at (0,0)
+        {\includesvg[width=.7\linewidth]{images/dead-wall.svg}};
+    \node[anchor=west,align=left] (repl) at (-5, -2.2)
+        {Kolejne kamienie\\zastępcze};
+    \draw[->,thick] (repl.north) -> (-1,-1);
+    \node[align=center] (kandora) at (0, -2.2)
+        {Kolejne wskaźniki\\\texttt{kandora}};
+    \draw[->,thick] (kandora.north) -> (0.7,-0.9);
+    \node[anchor=east,align=right] (wall) at (5, -2.2)
+        {Kamienie z muru\\dodawane kolejno\\do martwego muru};
+    \draw[->,thick] (wall.north) -> (2.75,-1);
+\end{tikzpicture}
