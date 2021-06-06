@@ -326,3 +326,109 @@ muru znajdujące się pod wskaźnikiem \texttt{dora} oraz odsłoniętymi wskaźn
 \texttt{kandora}.
 Te kamienie służą za wskaźniki \texttt{uradora} i są przyznawane wyłącznie
 graczom, którzy zgłosili \texttt{riichi}.
+
+\subsection{Koniec rozdania}
+Rozdanie może się zakończyć na trzy sposoby: poprzez wyczerpanie kamieni,
+anulowanie rozdania (usunięte) oraz przez jednego lub więcej graczy
+deklarujących wygraną.
+\texttt{Chombo} skutkuje powtórzeniem rozdania, a rozdania właśnie zakończonego
+nie uznaje się.
+
+Po zakończeniu rozdania gracze nigdy nie powinni patrzeć na kamienie w murze.
+
+\subsubsection{Ostatni kamień}
+Ostatni kamień w murze może być użyty jedynie do wygranej --- nie można go kraść
+do trójki, czwórki ani sekwensu.
+W przypadku deklaracji czwórki na przedostatnim kamieniu, ostatnim kamieniem
+staje się kamień zastępczy.
+Nie jest dozwolone deklarowanie zamkniętej czwórki po dobraniu ostatniego
+kamienia.
+
+\subsubsection{Wyczerpanie kamieni}
+Nierozstrzygnięcie wynikające z wyczerpania kamieni następuje, gdy nikt nie
+zadeklaruje wygranej po odrzucie ostatniego kamienia.
+14 kamieni z martwego muru pozostaje nieużyte.
+Po wyczerpaniu kamieni gracze będący \texttt{noten} (gracze, którzy nie mogą lub
+nie chcą pokazać ręki \texttt{tenpai}) płacą karę graczom, którzy pokażą ręce
+będące \texttt{tenpai}.
+Gracze deklarują, czy byli \texttt{tenpai} w kolejności: najpierw deklaruje
+gracz Wschodu, następnie gracz Południa, potem gracz Zachodu i na końcu gracz
+Północy.
+Dozwolona jest deklaracja poza kolejnością, ale nie można jej zmienić.
+Gracze, którzy zgłosili \texttt{riichi}, w przypadku wyczerpania kamieni są
+zobowiązani do pokazania, że byli \texttt{tenpai}.
+
+Łączna kara za bycie \texttt{noten} wynosi 3,000 punktów:
+\begin{itemize}
+    \item Jeśli trzech graczy było \texttt{tenpai}, gracz będący \texttt{noten}
+        płaci 1,000 punktów każdemu z nich,
+    \item Jeśli dwóch graczy było \texttt{tenpai}, każdy z nich otrzymuje 1,500
+        punktów od jednego z graczy \texttt{noten},
+    \item Jeśli jeden gracz był \texttt{tenpai}, otrzymuje on po 1,000 punktów
+        od wszystkich pozostałych graczy.
+\end{itemize}
+
+Jeśli wszyscy gracze byli \texttt{tenpai} lub wszyscy gracze byli
+\texttt{noten}, nie dochodzi do wymiany punktów.
+
+Po rozdaniu zakończonym wyczerpaniem kamieni, po prawej stronie gracza Wschodu
+umieszcza się 100-punktowy liczman (\texttt{honba}).
+Jeżeli gracz Wschodu zmienia się, nowy gracz Wschodu kładzie po swojej stronie
+aktualną liczbę liczmanów\footnote{Przykładowo, jeżeli poprzedni gracz Wschodu
+miał 2 liczmany, to w przypadku wyczerpania kamieni w następnym rozdaniu nowy
+gracz Wschodu kładzie 3 liczmany.}.
+
+\subsubsection{Anulowanie rozdania}
+Usunięte.
+
+\subsubsection{Zakłady \texttt{riichi} po nierozstrzygniętym rozdaniu}
+W przypadku nierozstrzygniętego rozdania, zakłady \texttt{riichi} pozostają na
+stole aż do najbliższego rozdania kończącego się wygraną.
+
+\subsubsection{\texttt{Furiten}}
+Jeśli w odrzutach gracza znajduje się kamień kompletujący jego rękę, to jest on
+\texttt{furiten} i nie może zadeklarować wygranej na odrzuconym kamieniu, nawet
+jeśli ręka skompletowana kamieniem w jego odrzutach byłaby bez \texttt{yaku}.
+
+Gracz będący \texttt{furiten} może zmienić kształt swojego czekania tak, aby
+uniknąć bycia \texttt{furiten} (z wyjątkiem sytuacji, gdy zgłosił
+\texttt{riichi}).
+
+Gracz będący \texttt{furiten} może zadeklarować wygraną przez dobór kamienia.
+
+Gracz, który nie zadeklaruje wygranej na odrzuconym kamieniu kompletującym jego
+rękę, jest \emph{tymczasowo \texttt{furiten}} (nawet jeśli odrzucony kamień nie
+dawałby mu \texttt{yaku}) i nie może zadeklarować wygranej na odrzuconym
+kamieniu w danej sekwencji tur.
+Stan tymczasowego \texttt{furiten} kończy się w momencie, gdy gracz dobierze lub
+ukradnie kamień.
+Wyjątkiem jest sytuacja, w której gracz zadeklarował \texttt{riichi} --- wówczas
+\texttt{furiten} utrzymuje się do końca rozdania.
+% A player is never considered furiten on a self-drawn tile.
+% ^ brzmi jak powtórzenie paragrafu wyżej
+
+\paragraph{Przykład 1}
+Rozważmy gracza z następującą ręką:
+\begin{center}
+    \DrawHand{m33~s111~p12345678}{3em}
+\end{center}
+Ręka czeka na 3-6-9 \texttt{pinzu}.
+Gracz będzie \texttt{furiten}, jeżeli którykolwiek z tych trzech kamieni
+znajdzie się w jego odrzutach.
+
+\paragraph{Przykład 2}
+Rozważmy gracza z następującą ręką:
+\begin{center}
+    \DrawHand{m33~s123~s123~s456~p23}{3em}
+\end{center}
+Ręka czeka na 1-4 \texttt{pinzu}.
+Odrzucona 7 \texttt{pinzu} nie czyni gracza \texttt{furiten} --- jedynie 1 i 4
+\texttt{pinzu}, jako kamienie kompletujące rękę.
+
+\paragraph{Przykład 3}
+Rozważmy gracza z następującą ręką:
+\begin{center}
+    \DrawHand{z77~p44456~m123~m123}{3em}
+\end{center}
+Ręka czeka na 4-7 \texttt{pinzu} oraz na czerwonego smoka.
+Odrzucenie dowolnego z tych kamieni czyni gracza \texttt{furiten}.
