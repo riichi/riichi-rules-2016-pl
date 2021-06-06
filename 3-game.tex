@@ -154,7 +154,7 @@ odrzucony kamień, a dopiero potem wykonać odrzut.
 Kradzież ostatnio odrzuconego kamienia do czwórki rozpoczyna się od wyraźnego
 powiedzenia na głos ,,kong'' lub ,,kan'' i położenia kamienia awersem do góry
 razem z pasującymi trzema kamieniami z ręki gracza.
-Po odsłonięciu \texttt{kandora}, gracz dobiera kamień zastępczy z martwego muru
+Po odsłonięciu wskaźnika \texttt{kandora}, gracz dobiera kamień zastępczy z martwego muru
 i kontynuuje swoją turę tak, jak gdyby dobrał kamień z muru.
 
 Martwy mur zawsze składa się z 14 kamieni, zatem po każdym zameldowaniu czwórki
@@ -166,7 +166,7 @@ jak dobrał kamień z muru lub kamień zastępczy z martwego muru (tj. nie w tur
 w której ukradł kamień do trójki lub sekwensu).
 Gracz musi powiedzieć na głos ,,kong'' lub ,,kan'' i położyć czwarty kamień
 równolegle do obróconego kamienia z rozszerzanej trójki.
-Następnie następuje odsłonięcie \texttt{kandora} i dobranie kamienia
+Następnie następuje odsłonięcie wskaźnika \texttt{kandora} i dobranie kamienia
 zastępczego.
 Kamień użyty do rozszerzenia trójki liczy się jako odrzut i można na nim
 zadeklarować wygraną.
@@ -179,7 +179,7 @@ kamień z muru lub kamień zastępczy z martwego muru (tj. nie w turze, w które
 ukradł kamień do trójki lub sekwensu).
 Gracz musi powiedzieć na głos ,,kong'' lub ,,kan'', odsłonić kamienie składające
 się na czwórkę, obrócić dwa środkowe kamienie rewersem do góry, odsłonić
-\texttt{kandora} i dobrać kamień zastępczy.
+wskaźnik \texttt{kandora} i dobrać kamień zastępczy.
 Martwy mur zawsze składa się z 14 kamieni, zatem po każdym zameldowaniu czwórki
 ostatni kamień muru staje się częścią martego muru.
 
@@ -199,3 +199,130 @@ deklaracja czwórki.
     odpowiada numerowi czwórki deklarowanej w trakcie rozdania.}
     \label{fig:dead-wall}
 \end{figure}
+
+\subsubsection{Pokazywanie grup}
+Kamienie w zameldowanych grupach nie mogą być użyte do zbudowania innych grup
+ani nie mogą być odrzucone.
+
+Po kradzieży kamienia należy natychmiast odsłonić stosowne kamienie na ręce.
+Dozwolone jest wykonanie odrzutu przed zabraniem ukradzionego kamienia.
+Jeżeli ukradziony kamień nie zostanie zabrany w ciągu następnych dwóch tur
+przeciwnych graczy (tj. zanim zostaną wykonane dwa odrzuty), ręka gracza staje
+się martwa.
+
+Zameldowane grupy gracz umieszcza po swojej prawej stronie, w miejscu widocznym
+dla wszystkich graczy.
+Ukradzione kamienie obraca się w celu zaznaczenia, który z graczy odrzucił
+ukradziony kamień:
+\begin{itemize}
+    \item Jeśli kamień odrzucił gracz po lewej, ukradziony kamień umieszcza się
+        z lewej strony grupy.
+        \begin{center}
+            \DrawHand{p8*79}{3em}
+        \end{center}
+    \item Jeśli kamień odrzucił gracz naprzeciwko, ukradziony kamień umieszcza
+        się w środku grupy.
+        \begin{center}
+            \DrawHand{z44*4}{3em}
+        \end{center}
+    \item Jeśli kamień odrzucił gracz po prawej, ukradziony kamień umieszcza się
+        z prawej strony grupy.
+        \begin{center}
+            \DrawHand{m6666*}{3em}
+        \end{center}
+\end{itemize}
+
+Otwarta czwórka ma jeden obrócony kamień.
+Otwarta trójka rozszerzona do czwórki ma dwa obrócone kamienie: kamień
+rozszerzający umieszcza się bezpośrednio obok poprzednio obróconego.
+
+\subsubsection{Reguła odpowiedzialności: trzecia zameldowana grupa smoków/czwarta
+zameldowana grupa wiatrów}
+Gracz, którego odrzucony kamień zostanie skradziony w celu sformowania:
+\begin{itemize}
+    \item trzeciej trójki/czwórki smoków przez gracza, który miał już dwie
+        zameldowane trójki/czwórki smoków,
+    \item czwartej trójki/czwórki wiatrów przez gracza, który miał już trzy
+        zameldowane trójki/czwórki wiatrów,
+\end{itemize}
+płaci pełną wartość ręki, jeśli gracz kradnący wygra później przez dobór na
+\texttt{daisangen} lub \texttt{daisuushii} (pozostali gracze nie płacą nic).
+Jeśli gracz kradnący wygra przez odrzut innego gracza na \texttt{daisangen} lub
+\texttt{daisuushii}, gracz, który umożliwił zameldowanie grupy i gracz, na
+którego odrzucie zadeklarowano wygraną, płacą po połowie wartości ręki.
+Koszt \texttt{honba} ponosi gracz, na którego odrzucie zadeklarowano wygraną.
+
+\subsubsection{Czwarta czwórka}
+Po zadeklarowaniu czwartej czwórki w trakcie rozdania rozdanie toczy się dalej,
+ale nie jest dozwolone deklarowanie więcej czwórek.
+Nie są przewidziane żadne wyjątki pozwalające na deklarację piątej czwórki.
+
+\subsubsection{Wygrana na odrzucie (\texttt{ron})}
+Gracz, który nie jest \texttt{furiten} i jest w stanie, używając ostatnio
+odrzucony kamień, uformować poprawną mahjongową rękę z przynajmniej jednym
+\texttt{yaku}, może wygrać rozdanie wyraźnie mówiąc na głos ,,ron'' lub
+,,mahjong''.
+
+\subsubsection{Wygrana na doborze (\texttt{tsumo})}
+Gracz, który po doborze kamienia z muru lub kamienia zastępczego z martwego muru
+jest w stanie uformować poprawną mahjongową rękę z przynajmniej jednym
+\texttt{yaku}, może wygrać rozdanie wyraźnie mówiąc na głos ,,tsumo'' lub
+,,mahjong''.
+Gracz powinien trzymać dobrany kamień oddzielnie od reszty ręki tak, aby było
+widoczne, na którym kamieniu wygrał.
+Gracz, który jest \texttt{furiten}, może wygrać na doborze.
+
+\subsubsection{\texttt{Tenpai}}
+Ręka gracza jest \texttt{tenpai} (gotowa/oczekująca), jeżeli potrzebuje jednego
+kamienia do skompletowania wygrywającej ręki.
+Gracz jest \texttt{tenpai} również wtedy, gdy wszystkie egzemplarze kamieni, na
+które czeka, są widoczne wśród odrzutów oraz zadeklarowanych grup.
+Gracz nie jest \texttt{tenpai}, jeżeli czeka wyłącznie na kamień, którego
+posiada wszystkie cztery egzemplarze.
+Gracz z martwą ręką nie może być \texttt{tenpai}.
+
+\subsubsection{\texttt{Riichi}}
+Gracz z zamkniętą gotową ręką może zadeklarować \texttt{riichi} poprzez wyraźne
+powiedzenie ,,riichi'', obrócenie na bok odrzuconego kamienia oraz zapłacenie
+1,000 punktów (\emph{zakładu}) kładąc stosowny liczman przy swoich odrzutach.
+Jeżeli przeciwnik zadeklaruje wygraną na obróconym kamieniu, deklaracja
+\texttt{riichi} jest nieważna i zakład wraca do gracza.
+Jeżeli przeciwnik ukradnie obrócony kamień do grupy, gracz powinien obrócić
+następny odrzucony przez siebie kamień w swojej najbliższej turze.
+
+Gracz nie może zadeklarować \texttt{riichi}, jeśli w murze zostały mniej niż
+cztery kamienie.
+
+Zakład wraca do gracza deklarującego \texttt{riichi}, jeżeli wygra on rozdanie.
+Jeżeli inny gracz wygra rozdanie, zabiera on wniesiony zakład.
+Jeżeli rozdanie wygrało kilku graczy, zakład zabiera ten gracz, który jest
+najbliżej w kolejności rozgrywki (przeciwnie do ruchu wskazówek zegara) gracza,
+który właśnie odrzucił kamień.
+Jeżeli gra zakończy się remisem, zakład zostaje na stole aż do momentu, w którym
+któryś z graczy wygra rozdanie, zabierając jednocześnie zakład.
+
+Gracz, który zadeklarował \texttt{riichi}, nie może zmienić swojej ręki.
+Może zadeklarować zamkniętą czwórkę po dobraniu kamienia pasującego do
+zamkniętej trójki, ale tylko wtedy, gdy nie zmieni to kształtu jego czekania
+oraz jeżeli pasujące trzy kamienie na jego ręce mogły być zinterpretowane jedynie jako
+składające się na trójkę\footnote{Przykładowo, w przypadku trzech kolejnych
+liczbowych trójek, gracz nie może zadeklarować żadnej zamkniętej czwórki, gdyż
+ten kształt można również zinterpretować jako trzy identyczne sekwensy.}.
+
+Gracz będący \texttt{furiten} może zadeklarować \texttt{riichi}.
+Jeżeli po deklaracji \texttt{riichi} gracz nie zadeklaruje wygranej na odrzucie
+kompletującym jego rękę, staje się \texttt{furiten}.
+Gracz będący \texttt{furiten} może wciąż wygrać na doborze.
+
+\texttt{Riichi} jest \texttt{yaku}.
+Gracz, który wygrał podczas pierwszej sekwencji tur po złożeniu deklaracji
+(wliczając w to swój dobór), otrzymuje dodatkowe \texttt{yaku} za
+\texttt{ippatsu}.
+Szansa na \texttt{ippatsu} przepada, jeśli sekwencja jest przerwana deklaracją
+czwórki, trójki lub sekwensu, wliczając w to zamknięte czwórki.
+
+Gracz, który wygrał po deklaracji \texttt{riichi}, odsłania kamienie z martwego
+muru znajdujące się pod wskaźnikiem \texttt{dora} oraz odsłoniętymi wskaźnikami
+\texttt{kandora}.
+Te kamienie służą za wskaźniki \texttt{uradora} i są przyznawane wyłącznie
+graczom, którzy zgłosili \texttt{riichi}.
